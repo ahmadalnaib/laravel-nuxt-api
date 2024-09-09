@@ -1,24 +1,33 @@
 <script setup lang="ts">
+
+
+
+
 definePageMeta({
   middleware: ['sanctum:guest'],
 });
 
-const sanctumFetch = useSanctumClient();
-
+const { register } = useAuth();
+const { refreshIdentity } = useSanctumAuth();
 
 
 const form = reactive<Registerform>({
   name: 'Ahmed',
-  email: 'alnaib888@gmail.com',
+  email: 'ato@gmail.com',
   password: '12345678',
+ 
+
 });
 
 const submit = async () => {
-  // always the lib check  cross site request forgery cookie for use
-  await sanctumFetch('http://127.0.0.1:8000/register', {
-    method: 'POST',
-    body: form,
-  });
+  await register(form);
+
+  // refresh user
+  await refreshIdentity();
+
+  // redirect
+  await navigateTo('/dashboard');
+
 
 };
 </script>
@@ -37,6 +46,7 @@ const submit = async () => {
       <label for="password">Password</label>
       <input type="password" placeholder="password" v-model="form.password" />
     </div>
+  
 
     <button type="submit">Register</button>
   </form>
