@@ -18,6 +18,10 @@ export default defineNuxtConfig({
   modules: ['nuxt-auth-sanctum'],
 
   sanctum:{
-    baseUrl: 'http://localhost:8000'
+    baseUrl: 'http://localhost:8000',
+    redirect:{
+      onLogin: '/dashboard',
+
+    }
   }
 })
