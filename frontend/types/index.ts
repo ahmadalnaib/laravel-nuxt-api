@@ -19,5 +19,9 @@ declare global{
 
   }
 
+  interface validationErrors{
+  [key: string]: string[];
+  }
+
 
 }
