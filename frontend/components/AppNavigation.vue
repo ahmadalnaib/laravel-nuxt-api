@@ -1,7 +1,12 @@
 <script setup lang="ts">
-const { isAuthenticated } = useSanctumAuth();
+const { isAuthenticated,logout } = useSanctumAuth();
 
 const user = useSanctumUser<User>();
+
+const logoutFun = async () => {
+  await logout();
+  await navigateTo('/');
+};
 </script>
 
 <template>
@@ -17,6 +22,7 @@ const user = useSanctumUser<User>();
       <div class="font-semibold">
         {{ user?.name }}
       </div>
+      <button @click="logoutFun">Sign out</button>
     </div>
   </div>
 </template>

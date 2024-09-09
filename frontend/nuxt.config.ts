@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     baseUrl: 'http://localhost:8000',
     redirect:{
       onLogin: '/dashboard',
+      // onLogout: '/',
 
     }
   }
