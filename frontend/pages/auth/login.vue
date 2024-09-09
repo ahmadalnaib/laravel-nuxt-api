@@ -13,8 +13,15 @@ const submit = async () => {
 
 <template>
   <form @submit.prevent="submit">
-    <input type="text" placeholder="email" v-model="form.email" />
-    <input type="password" placeholder="password" v-model="form.password" />
+    <div>
+      <label for="email">Email</label>
+      <input type="text" placeholder="email" v-model="form.email" />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" placeholder="password" v-model="form.password" />
+    </div>
+
     <button type="submit">Login</button>
   </form>
 </template>
