@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { isAuthenticated,user } = useSanctumAuth();
+const { isAuthenticated } = useSanctumAuth();
+
+const user = useSanctumUser<User>();
 </script>
 
 <template>
@@ -13,7 +15,7 @@ const { isAuthenticated,user } = useSanctumAuth();
     </div>
     <div class="flex items-center space-x-6" v-if="isAuthenticated">
       <div class="font-semibold">
-                {{ user.name }}
+        {{ user?.name }}
       </div>
     </div>
   </div>
