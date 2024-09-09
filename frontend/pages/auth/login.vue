@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { login } = useSanctumAuth();
 
-const form = reactive({
+const form = reactive<Loginform>({
   email: 'alnaib888@gmail.com',
   password: '12345678',
 });
