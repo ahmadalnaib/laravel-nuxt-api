@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { isAuthenticated,logout } = useSanctumAuth();
+const { isAuthenticated, logout } = useSanctumAuth();
 
 const user = useSanctumUser<User>();
 
@@ -13,12 +13,13 @@ const logoutFun = async () => {
   <div class="p-6 flex items-center justify-between">
     <div class="flex items-center space-x-6">
       <nuxt-link to="/">Home</nuxt-link>
-      <nuxt-link to="/dashboard">Dashboard</nuxt-link>
     </div>
     <div class="flex items-center space-x-6" v-if="!isAuthenticated">
       <nuxt-link to="/auth/login">Login</nuxt-link>
+      <nuxt-link to="/auth/register">Register</nuxt-link>
     </div>
     <div class="flex items-center space-x-6" v-if="isAuthenticated">
+      <nuxt-link to="/dashboard">Dashboard</nuxt-link>
       <div class="font-semibold">
         {{ user?.name }}
       </div>

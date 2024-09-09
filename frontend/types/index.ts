@@ -12,5 +12,11 @@ declare global{
    
   }
 
+  interface Registerform{
+    name: string;
+    email: string;
+    password: string;
+  }
+
 
 }
