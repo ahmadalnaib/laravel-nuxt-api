@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  middleware: ['sanctum:guest'],
+});
+
 const { login } = useSanctumAuth();
 
 const form = reactive<Loginform>({
