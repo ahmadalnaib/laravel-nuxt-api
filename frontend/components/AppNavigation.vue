@@ -20,6 +20,7 @@ const logoutFun = async () => {
     </div>
     <div class="flex items-center space-x-6" v-if="isAuthenticated">
       <nuxt-link to="/dashboard">Dashboard</nuxt-link>
+      <nuxt-link to="/account">Account</nuxt-link>
       <div class="font-semibold">
         {{ user?.name }}
       </div>

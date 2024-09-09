@@ -23,5 +23,12 @@ declare global{
   [key: string]: string[];
   }
 
+  interface profileForm{
+    name: string;
+    email: string;
+   
+  }
+
+
 
 }
