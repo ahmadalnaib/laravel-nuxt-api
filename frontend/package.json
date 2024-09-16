@@ -10,6 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@algolia/autocomplete-js": "^1.17.4",
+    "@algolia/autocomplete-theme-classic": "^1.17.4",
+    "@meilisearch/autocomplete-client": "^0.3.0",
     "nuxt": "^3.13.0",
     "nuxt-auth-sanctum": "^0.4.11",
     "vue": "latest",
