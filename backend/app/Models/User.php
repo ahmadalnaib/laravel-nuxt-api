@@ -53,6 +53,7 @@ class User extends Authenticatable
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'url' => route('users.show', $this),
         ];
     }
 }

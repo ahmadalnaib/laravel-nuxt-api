@@ -21,6 +21,7 @@ class Product extends Model
         'description' => $this->description,
         'price' => $this->price,
         'image' => $this->image,
+        'url' => route('products.show', $this),
     ];
 }
 }
